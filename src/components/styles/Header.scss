@@ -2,21 +2,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding-inline: 4em;
+    padding-top: 2em;
     background-color: #fff;
   }
   
-  .logo {
-    font-size: 24px;
-    color: #ff6060;
+  nav {
+    display: flex;
+    gap: 57px;
   }
-  
+
   nav a {
+    text-align: right;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 24px;
     margin-left: 20px;
     text-decoration: none;
     color: #000;
   }
   
   nav a:hover {
+    font-weight: bold;
+  }
+
+  nav a.active {
     text-decoration: underline;
   }

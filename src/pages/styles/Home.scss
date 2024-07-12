@@ -1,12 +1,20 @@
 .home {
-    padding: 20px;
+    padding: 3em;
   }
   
-  .hero {
-    background-image: url('https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aH2bY6cNrrbLsCGnEZS1lVTKeS9fP3eUDnKLvYhYjAOd9UmG3jf7d688kCI5Q741zNYlawlESmjGerHeNf5-TAcbFVluJZ8TAWQRnz3W72TyZ9pR51LWxS9deL~rHHF0sNXuJNpvph1mpRwvpbKH1w2QDw5VrsPT-ZNRIr9CVirzDNBjhXUjVe88PuhLpI8M-6f2vgVWYKLid-qHwRi12re2aClKvDnNHo6d7A-B9VGOAqOugjz1~wAPS1WNHLdZ5SyTwNYSGv-JoWLTG~5p7okKg2x0ZgU2bAjcqhH0L4zW3WINlwe16I1Qq4ZD3ZIdhE4ZY8tjvCUBOgk3wtzrKw__');
+  .banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aH2bY6cNrrbLsCGnEZS1lVTKeS9fP3eUDnKLvYhYjAOd9UmG3jf7d688kCI5Q741zNYlawlESmjGerHeNf5-TAcbFVluJZ8TAWQRnz3W72TyZ9pR51LWxS9deL~rHHF0sNXuJNpvph1mpRwvpbKH1w2QDw5VrsPT-ZNRIr9CVirzDNBjhXUjVe88PuhLpI8M-6f2vgVWYKLid-qHwRi12re2aClKvDnNHo6d7A-B9VGOAqOugjz1~wAPS1WNHLdZ5SyTwNYSGv-JoWLTG~5p7okKg2x0ZgU2bAjcqhH0L4zW3WINlwe16I1Qq4ZD3ZIdhE4ZY8tjvCUBOgk3wtzrKw__');
     background-size: cover;
+    background-color: black;
     background-position: center;
-    height: 300px;
+    border: 1px;
+    opacity: 1;
+    border-radius: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    font-family: Montserrat;
+    font-weight: 700;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,17 +25,27 @@
   .locations {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
     margin-top: 20px;
+    padding-bottom: 4em;
+    align-items: center; 
+    justify-items: center; 
+    background-color: #F6F6F6;
+    border-radius: 2em;
   }
   
   .location-card {
+    margin-top: 4em;
     background-color: #ff6060;
     color: #fff;
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
+    justify-content: start;
+    align-items:end;
+    text-wrap: wrap;
+    width: 350px;
+    height: 350px;
     border-radius: 8px;
+    font-family: Montserrat;
   }
+
+  
