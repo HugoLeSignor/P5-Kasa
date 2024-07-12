@@ -1,0 +1,17 @@
+.about {
+    padding: 7em;
+}
+
+.bannerAbout {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/56fa/e17e/b9995860bb6384a77ca7dc9bf52da3be?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KB-xuFHR4qOeHyeR27Lqa~US5exfM71v4kDKfDgrXmupqUhKtPAkfl-GseaOJEqAhEdWiIZNb2JpVfIz-ca2SzWzDb8Jdb1MCrmxgudd8h2~vtYNVj3q2uuYXMFZ68wOMDDAtM-Ni3r2hf4bQ89fRNLjo5K3jECEFVxMn~IPouEjoPWsB~n05Sp882T8Qya~BwWMOIR4EXL6qPPnt2VGiorLB4fOjlqBgEAYl1b5OsCgirPhYp0lxpmXgZnKMdxkcnHWER~VSGafigToeygNvp2sMh9Y04oRQ1W1866zDF~zMy6W7tfnmP~e4MQd2A071Uw8yi1VbY3pqRSfXOtmew__');
+    background-size: cover;
+    background-color: black;
+    background-position: center;
+    border: 1px;
+    opacity: 1;
+    border-radius: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height: 250px;
+    display: flex;
+  }
+  

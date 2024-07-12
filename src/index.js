@@ -6,7 +6,7 @@ import About from './pages/About';
 import Error from './pages/Error';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './pages/styles/global.css'; // Pour les styles globaux
+import './pages/styles/global.scss'; // Pour les styles globaux
 
 const App = () => {
   return (

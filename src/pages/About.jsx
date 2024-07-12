@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './styles/About.scss';
 
 export default function About() {
+  
   return (
-    <div>About</div>
+    <div className='about'>
+      <div className='bannerAbout'></div>
+
+  
+  </div>
   )
 }

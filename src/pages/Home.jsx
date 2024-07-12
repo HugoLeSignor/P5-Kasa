@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Home.scss'; // On va créer ce fichier pour les styles
+import './styles/Home.scss'; 
 
 
 const Home = () => {
