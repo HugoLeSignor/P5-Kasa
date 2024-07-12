@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './styles/Footer.scss'; // On va créer ce fichier pour les styles
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="footer">
+      <p>© 2020 Kasa. All rights reserved</p>
+    </footer>
+  );
+};
+
+export default Footer;

@@ -1,7 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles/Header.scss'; // On va créer ce fichier pour les styles
 
-export default function Header() {
+const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <header className="header">
+      <div className="logo">Kasa</div>
+      <nav>
+        <Link to="/">Accueil</Link>
+        <Link to="/about">A Propos</Link>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
