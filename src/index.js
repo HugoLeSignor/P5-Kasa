@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Error from './pages/Error';
+import Fiche from './pages/Fiche';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './pages/styles/global.scss'; // Pour les styles globaux
+import './pages/styles/global.scss';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/fiche/:id" element={<Fiche />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
