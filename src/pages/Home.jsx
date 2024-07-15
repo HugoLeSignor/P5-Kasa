@@ -5,6 +5,9 @@ import './styles/Home.scss';
 const Home = () => {
   const locations = require ('../utils/data.json')
   
+
+
+
   return (
     <div className="home">
       <div className="banner">
@@ -13,7 +16,9 @@ const Home = () => {
       <div className="locations">
         {locations.map((location) => (
           <div key={location.id} className="location-card">
-            <img className="location-card-img" src={location.cover}></img>
+            <img alt={location.description} className="location-card-img" 
+            src={location.cover}>
+            </img>
             <h2>{location.title}</h2>
           </div>
         ))}
