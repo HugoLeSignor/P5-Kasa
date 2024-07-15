@@ -1,28 +1,54 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import locations from '../utils/data.json';
 import './styles/Fiche.scss';
 
 const Fiche = () => {
   const { id } = useParams();
-  const locations = require('../utils/data.json');
   const location = locations.find(loc => loc.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [openMenus, setOpenMenus] = useState([]);
 
   if (!location) {
     return <div>Logement non trouvé</div>;
   }
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex(prevIndex => 
       prevIndex === location.pictures.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex(prevIndex => 
       prevIndex === 0 ? location.pictures.length - 1 : prevIndex - 1
     );
   };
+
+  const toggleMenu = (menu) => {
+    setOpenMenus(prevOpenMenus => 
+      prevOpenMenus.includes(menu)
+        ? prevOpenMenus.filter(item => item !== menu)
+        : [...prevOpenMenus, menu]
+    );
+  };
+
+  const menuItems = [
+    {
+      title: 'Description',
+      content: <p>{location.description}</p>,
+    },
+    {
+      title: 'Équipements',
+      content: (
+        <ul>
+          {location.equipments.map((equipement, index) => (
+            <li key={index}>{equipement}</li>
+          ))}
+        </ul>
+      ),
+    },
+  ];
 
   return (
     <div className="fiche">
@@ -37,22 +63,41 @@ const Fiche = () => {
         )}
       </div>
       <div className="fiche-content">
-        <h1>{location.title}</h1>
-        <p>{location.location}</p>
-        <div className="tags">
-          {location.tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
+        <div className="left-column">
+          <h1>{location.title}</h1>
+          <p>{location.location}</p>
+          <div className="tags">
+            {location.tags.map((tag, index) => (
+              <span key={index} className="tag">{tag}</span>
+            ))}
+          </div>
         </div>
-        <div className="host">
-          <p>{location.host.name}</p>
-          <img src={location.host.picture} alt={location.host.name} />
+        <div className="right-column">
+          <div className="host">
+            <p>{location.host.name}</p>
+            <img src={location.host.picture} alt={location.host.name} />
+          </div>
+          <div className="rating">
+            {[1, 2, 3, 4, 5].map(star => (
+              <span key={star} className={star <= location.rating ? "star filled" : "star"}>★</span>
+            ))}
+          </div>
         </div>
-        <div className="rating">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span key={star} className={star <= location.rating ? "star filled" : "star"}>★</span>
-          ))}
-        </div>
+      </div>
+      <div className='menu-container'>
+        {menuItems.map((item, index) => (
+          <div key={index} className='menu-item'>
+            <div className='menu-header'>
+              <button onClick={() => toggleMenu(item.title)} className='menu-title'>
+                {item.title}
+                <span className={`arrow ${openMenus.includes(item.title) ? 'open' : ''}`}>▼</span>
+              </button>
+            </div>
+            <div className={`menu-content ${openMenus.includes(item.title) ? 'open' : ''}`}>
+              {item.content}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
