@@ -1,0 +1,32 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    text-align: center;
+    font-family: Montserrat;
+  }
+  
+  .error-code {
+    font-size: 15rem;
+    color: #FF6060;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    color: #FF6060;
+    margin: 2rem 0;
+  }
+  
+  .error-link {
+    color: #000000;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 500;
+    &:hover {
+      text-decoration: none;
+    }
+  }
