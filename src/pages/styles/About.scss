@@ -1,17 +1,61 @@
 .about {
-    padding: 7em;
-}
-
-.bannerAbout {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/56fa/e17e/b9995860bb6384a77ca7dc9bf52da3be?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KB-xuFHR4qOeHyeR27Lqa~US5exfM71v4kDKfDgrXmupqUhKtPAkfl-GseaOJEqAhEdWiIZNb2JpVfIz-ca2SzWzDb8Jdb1MCrmxgudd8h2~vtYNVj3q2uuYXMFZ68wOMDDAtM-Ni3r2hf4bQ89fRNLjo5K3jECEFVxMn~IPouEjoPWsB~n05Sp882T8Qya~BwWMOIR4EXL6qPPnt2VGiorLB4fOjlqBgEAYl1b5OsCgirPhYp0lxpmXgZnKMdxkcnHWER~VSGafigToeygNvp2sMh9Y04oRQ1W1866zDF~zMy6W7tfnmP~e4MQd2A071Uw8yi1VbY3pqRSfXOtmew__');
-    background-size: cover;
-    background-color: black;
-    background-position: center;
-    border: 1px;
-    opacity: 1;
-    border-radius: 1em;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    height: 250px;
-    display: flex;
-  }
+    margin-inline: 7em;
+    margin-top: 3em;
   
+    .bannerAbout {
+      height: 200px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/56fa/e17e/b9995860bb6384a77ca7dc9bf52da3be?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mI2jputeVs0mIg0vpDTX1ICthIaZ2ZmC-yYCC6grV9M3JT3ZD2xZDBZtHzIfvEHj861L5EQW7Nn-kOoLj0AR72rKnCUmjJOvI0zmEb9HXFGWYSVGGcgxfTLH4Xvl3qHuG6bnDDc8FMBRyn2B4n7kjnWpZW-0F3U4pufSJouXVj6LhbCyJ2ox3WjrEOwV-ZKy83yKke5d3nSIHECEanuSiiaMc8W7u8uJ76mnvxFlxHsxmJZ0aKCGzfME14jpo4YyQzw6bbIY~QINEvmfivWLZFT1s5o4XzKOaSp3zDpwjKYX4WeXhM4zd8PgaWovJdjDEAzbtBNFaWILuG4NdpzXVg__');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+  
+    .menu-container {
+        margin-inline: 7em;
+      .menu-item {
+        margin-bottom: 20px;
+  
+        .menu-title {
+          width: 100%;
+          padding: 15px 20px;
+          background-color: #FF6060;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          text-align: left;
+          font-size: 18px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: Montserrat;
+          font-weight: 700;
+  
+          .arrow {
+            transition: transform 0.3s ease;
+            &.open {
+              transform: rotate(180deg);
+            }
+          }
+        }
+  
+        .menu-content {
+            background-color: #F6F6F6;
+            color: #000000;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            font-family: Montserrat;
+    
+            &.open {
+              padding: 20px;
+              max-height: 500px; 
+              opacity: 1;
+            }
+          }
+      }
+    }
+  }
