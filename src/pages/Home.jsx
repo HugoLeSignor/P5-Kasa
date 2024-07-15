@@ -1,12 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/Home.scss'; 
 
-
 const Home = () => {
-  const locations = require ('../utils/data.json')
-  
-
-
+  const locations = require('../utils/data.json');
 
   return (
     <div className="home">
@@ -15,12 +12,16 @@ const Home = () => {
       </div>
       <div className="locations">
         {locations.map((location) => (
-          <div key={location.id} className="location-card">
-            <img alt={location.description} className="location-card-img" 
-            src={location.cover}>
-            </img>
-            <h2>{location.title}</h2>
-          </div>
+          <Link to={`/fiche/${location.id}`} key={location.id} className="location-card">
+            <div className="location-card-inner">
+              <img 
+                alt={location.title} 
+                className="location-card-img" 
+                src={location.cover}
+              />
+              <h2>{location.title}</h2>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
