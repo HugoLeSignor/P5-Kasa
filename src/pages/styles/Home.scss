@@ -40,14 +40,20 @@
     padding: 20px;
     display: flex;
     justify-content: start;
-    align-items:end;
+    align-items:start;
     text-wrap: wrap;
+    flex-direction: column;
     width: 350px;
     height: 350px;
     border-radius: 8px;
     font-family: Montserrat;
     font-size: 13px;
     border-radius: 1em;
+  }
+
+  .location-card-img {
+    width: 350px; 
+    height: 300px;
   }
 
   

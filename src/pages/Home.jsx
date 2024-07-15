@@ -13,7 +13,7 @@ const Home = () => {
       <div className="locations">
         {locations.map((location) => (
           <div key={location.id} className="location-card">
-
+            <img className="location-card-img" src={location.cover}></img>
             <h2>{location.title}</h2>
           </div>
         ))}
