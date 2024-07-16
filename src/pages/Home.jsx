@@ -13,12 +13,10 @@ const Home = () => {
       <div className="locations">
         {locations.map((location) => (
           <Link to={`/fiche/${location.id}`} key={location.id} className="location-card">
-            <div className="location-card-inner">
-              <img 
-                alt={location.title} 
-                className="location-card-img" 
-                src={location.cover}
-              />
+            <div 
+              className="location-card-inner"
+              style={{ backgroundImage: `url(${location.cover})` }}
+            >
               <h2>{location.title}</h2>
             </div>
           </Link>

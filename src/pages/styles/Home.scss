@@ -1,61 +1,80 @@
 @import './src/pages/styles/global.scss';
 
 .home {
-  @extend .container;
-}
-
-.banner {
-  @include background-image('https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CC~a2D6Bjdg~219YWHG0vBgGUHjFbj3TW3SeWM02Wd3r4krjq7J6Pw5ojAw~xF~O1bX9~9x~xU0iQP-gztsAHazuOmwLzzMc86Q1p9tZa9DR813UdKO21BYwq-YN52sKvwhPqrtgSS5Vbx3MMtUDPnrdYlPcX3TEVz8ieiiC2ABxLP83uwAcfTcYmSxHhYk6bwR1KsRn6hVsqdbAAyFtAEUm3xEMcnVNWgHPvuOq0HStUD4p36xIT~N2r0PspCUyzAqbZU7yS9DMH7R~hKOOJgqods8~FJL7pZ-sabAVsbt3mQfw6RKtdI7ujdj6Q8vrIyXHkudwDPlRXenYsir4Gg__');
-  opacity: 1;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.locations {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 20px;
-  padding-bottom: 4em;
-  align-items: center; 
-  justify-items: center; 
-  @extend .bg-secondary;
-  @extend .border-radius;
-
-  @include mobile {
-    grid-template-columns: 1fr;
-    padding-bottom: 2em;
-    background-color: #fff;
+  .banner {
+    @include background-image('https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CC~a2D6Bjdg~219YWHG0vBgGUHjFbj3TW3SeWM02Wd3r4krjq7J6Pw5ojAw~xF~O1bX9~9x~xU0iQP-gztsAHazuOmwLzzMc86Q1p9tZa9DR813UdKO21BYwq-YN52sKvwhPqrtgSS5Vbx3MMtUDPnrdYlPcX3TEVz8ieiiC2ABxLP83uwAcfTcYmSxHhYk6bwR1KsRn6hVsqdbAAyFtAEUm3xEMcnVNWgHPvuOq0HStUD4p36xIT~N2r0PspCUyzAqbZU7yS9DMH7R~hKOOJgqods8~FJL7pZ-sabAVsbt3mQfw6RKtdI7ujdj6Q8vrIyXHkudwDPlRXenYsir4Gg__');
+    opacity: 1;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
-}
 
-.location-card {
-  margin-top: 4em;
-  background-color: $primary-color;
-  color: $white;
-  padding: 20px;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  text-wrap: wrap;
-  flex-direction: column;
-  width: 350px;
-  height: 350px;
-  @extend .border-radius;
-  font-size: 13px;
+  .locations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 50px;
+    margin-top: 3em;
+    @extend .bg-secondary;
+    @extend .border-radius;
 
-  @include mobile {
-    width: 90%;
-    height: 90%;
-    margin-top: 2em;
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding: 20px;
+      gap: 20px;
+    }
   }
-}
 
-.location-card-img {
-  width: 350px; 
-  height: 300px;
-  @extend .border-radius;
+  .location-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 300px; // Ensure all cards have the same height
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
 
-  @include mobile {
-    width: 650px;
-        height: 550px;
+    .location-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.507) 100%);
+    }
+
+    h2 {
+      position: relative;
+      color: white;
+      font-size: 18px;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5); // Add a semi-transparent background
+      padding: 10px; // Add padding for better readability
+      border-radius: 5px; // Optional: Add rounded corners
+      margin: 0 20px 20px 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; // Adjust as needed to position the underline correctly
+        height: 3px; // Thickness of the underline
+        width: 100%;
+        background-color: #FF6060; // Color of the underline
+        z-index: -1; // Place the underline behind the text
+      }
+    }
   }
+
+  @extend .container
 }
