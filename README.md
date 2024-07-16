@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Kasa - Refonte du site de location d’appartements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenue dans le projet de refonte du site Kasa, une entreprise leader dans la location d'appartements entre particuliers en France. Ce projet vise à moderniser le site web en utilisant une stack JavaScript complète avec React pour le front-end et NodeJS pour le back-end.
 
-## Available Scripts
+## Table des matières
 
-In the project directory, you can run:
+- [Présentation](#présentation)
+- [Installation](#installation)
+- [Lancement du projet](#lancement-du-projet)
+- [Spécifications des composants](#spécifications-des-composants)
+- [Contraintes techniques](#contraintes-techniques)
+- [Contraintes fonctionnelles](#contraintes-fonctionnelles)
+- [Ressources](#ressources)
 
-### `npm start`
+## Présentation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Le site actuel de Kasa a été codé il y a plus de 10 ans en ASP. NET. Une refonte totale est en cours pour passer à une stack JavaScript moderne. Vous êtes chargé de développer l'ensemble de l'application front-end en React, en suivant les maquettes Figma et en respectant les guidelines de Kasa.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Pour installer et configurer le projet, suivez les étapes ci-dessous :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/votre-utilisateur/kasa-refonte.git
+    cd kasa-refonte
+    ```
 
-### `npm run build`
+2. Installez les dépendances :
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Lancement du projet
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Pour démarrer le projet en mode développement, exécutez :
+``` bash
+npm start 
+```
+L'application sera accessible à l'adresse http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Spécifications des composants
 
-### `npm run eject`
+### Gallery
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Défilement des photos** : Si l'utilisateur se trouve à la première image et qu'il clique sur "Image précédente", la galerie affiche la dernière image. Inversement, quand l'image affichée est la dernière de la galerie, si l'utilisateur clique sur "Image suivante", la galerie affiche la première image.
+- **Affichage unique** : S'il n'y a qu'une seule image, les boutons "Suivant" et "Précédent" ainsi que la numérotation n'apparaissent pas.
+- **Dimension fixe** : La galerie doit toujours rester de la même hauteur, celle indiquée sur la maquette Figma. Les images seront coupées et centrées dans le cadre de l’image.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Collapse
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **État initial** : Les Collapses sont fermés à l'initialisation de la page.
+- **Comportement au clic** : Si le Collapse est ouvert, le clic de l'utilisateur permet de le fermer. Inversement, si le Collapse est fermé, un clic permet de l'ouvrir.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contraintes techniques
 
-## Learn More
+- Utilisation de **Create React App** pour créer l'application React, mais vous pouvez utiliser un autre bundler comme Vite si vous préférez.
+- Respect des **coding guidelines** de Kasa.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contraintes fonctionnelles
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Les maquettes Figma sont responsives.
+- Les animations des menus déroulants doivent correspondre aux prototypes disponibles sur Figma.
 
-### Code Splitting
+## Ressources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Maquettes Figma](URL des maquettes)
+- [Prototypes Figma](URL des prototypes)
+- Données JSON des annonces
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pour toute question ou suggestion, n'hésitez pas à contacter :
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Laura, CTO** : laura@kasa.com
+- **Paul, Designer** : paul@kasa.com
