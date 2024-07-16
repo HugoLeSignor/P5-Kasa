@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
 import locations from '../utils/data.json';
 import './styles/Fiche.scss';
 
 const Fiche = () => {
   const { id } = useParams();
-  const location = locations.find(loc => loc.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [openMenus, setOpenMenus] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const location = useMemo(() => locations.find(loc => loc.id === id), [id]);
 
   if (!location) {
-    return <div>Logement non trouvé</div>;
+    return <Navigate to="/error" />;
   }
 
   const nextImage = () => {
     setCurrentImageIndex(prevIndex => 
       prevIndex === location.pictures.length - 1 ? 0 : prevIndex + 1
     );
+    setImageLoaded(false);
   };
 
   const prevImage = () => {
     setCurrentImageIndex(prevIndex => 
       prevIndex === 0 ? location.pictures.length - 1 : prevIndex - 1
     );
+    setImageLoaded(false);
   };
 
   const toggleMenu = (menu) => {
@@ -53,12 +57,24 @@ const Fiche = () => {
   return (
     <div className="fiche">
       <div className="carousel">
-        <img src={location.pictures[currentImageIndex]} alt={location.title} className="carousel-image" />
+        {!imageLoaded && <div className="loading">Loading...</div>}
+        <img 
+          src={location.pictures[currentImageIndex]} 
+          alt={`${location.title} - Image ${currentImageIndex + 1}`} 
+          className={`carousel-image ${imageLoaded ? 'loaded' : ''}`}
+          onLoad={() => setImageLoaded(true)}
+        />
         {location.pictures.length > 1 && (
           <>
-            <button onClick={prevImage} className="carousel-button prev">&lt;</button>
-            <button onClick={nextImage} className="carousel-button next">&gt;</button>
-            <div className="carousel-counter">{currentImageIndex + 1} / {location.pictures.length}</div>
+            <button onClick={prevImage} className="carousel-button prev" aria-label="Previous image">
+              &lt;
+            </button>
+            <button onClick={nextImage} className="carousel-button next" aria-label="Next image">
+              &gt;
+            </button>
+            <div className="carousel-counter" aria-live="polite">
+              {currentImageIndex + 1} / {location.pictures.length}
+            </div>
           </>
         )}
       </div>
@@ -75,11 +91,13 @@ const Fiche = () => {
         <div className="right-column">
           <div className="host">
             <p>{location.host.name}</p>
-            <img src={location.host.picture} alt={location.host.name} />
+            <img src={location.host.picture} alt={`Host ${location.host.name}`} />
           </div>
-          <div className="rating">
+          <div className="rating" aria-label={`Rating: ${location.rating} out of 5 stars`}>
             {[1, 2, 3, 4, 5].map(star => (
-              <span key={star} className={star <= location.rating ? "star filled" : "star"}>★</span>
+              <span key={star} className={star <= location.rating ? "star filled" : "star"}>
+                ★
+              </span>
             ))}
           </div>
         </div>
@@ -88,9 +106,15 @@ const Fiche = () => {
         {menuItems.map((item, index) => (
           <div key={index} className='menu-item'>
             <div className='menu-header'>
-              <button onClick={() => toggleMenu(item.title)} className='menu-title'>
+              <button 
+                onClick={() => toggleMenu(item.title)} 
+                className='menu-title'
+                aria-expanded={openMenus.includes(item.title)}
+              >
                 {item.title}
-                <span className={`arrow ${openMenus.includes(item.title) ? 'open' : ''}`}>▼</span>
+                <span className={`arrow ${openMenus.includes(item.title) ? 'open' : ''}`}>
+                  ▼
+                </span>
               </button>
             </div>
             <div className={`menu-content ${openMenus.includes(item.title) ? 'open' : ''}`}>

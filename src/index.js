@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/fiche/:id" element={<Fiche />} />
         <Route path="*" element={<Error />} />
-        <Route path="/fiche/*" element={<Error />} />
       </Routes>
       <Footer />
     </BrowserRouter>
