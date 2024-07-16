@@ -1,32 +1,50 @@
+@import './src/pages/styles/global.scss';
+
 .error-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    text-align: center;
-    font-family: Montserrat;
+  @include flex-center;
+  flex-direction: column;
+  height: 70vh;
+  text-align: center;
+
+  @include mobile {
+    justify-content: space-between;
   }
-  
-  .error-code {
-    font-size: 15rem;
-    color: #FF6060;
-    margin: 0;
-    font-weight: bold;
+}
+
+.error-code {
+  font-size: 15rem;
+  @extend .text-primary;
+  margin: 0;
+  font-weight: bold;
+
+  @include mobile {
+    font-size: 8rem;
+    margin-top: 2em;
   }
-  
-  .error-message {
-    font-size: 2rem;
-    color: #FF6060;
-    margin: 2rem 0;
+}
+
+.error-message {
+  font-size: 2rem;
+  @extend .text-primary;
+  margin: 2rem 0;
+
+  @include mobile {
+    font-size: 1.5rem;
+    width: 40%;
   }
-  
-  .error-link {
-    color: #000000;
-    text-decoration: underline;
-    font-size: 1.2rem;
-    font-weight: 500;
-    &:hover {
-      text-decoration: none;
-    }
+}
+
+.error-link {
+  color: $text-color;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  font-weight: 500;
+  &:hover {
+    text-decoration: none;
   }
+
+  @include mobile {
+    margin-bottom: 5em;
+    font-size: 1rem;
+  }
+}

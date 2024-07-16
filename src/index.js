@@ -7,7 +7,7 @@ import Error from './pages/Error';
 import Fiche from './pages/Fiche';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import './pages/styles/global.scss';
 
 const App = () => {
   return (

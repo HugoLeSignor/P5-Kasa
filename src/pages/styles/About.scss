@@ -1,64 +1,22 @@
+@import './src/pages/styles/global.scss';
+
 .about {
-    width: auto;
-    margin-inline: 10em;
-    margin-top: 3em;
-  
-    .bannerAbout {
-      height: 200px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/56fa/e17e/b9995860bb6384a77ca7dc9bf52da3be?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mI2jputeVs0mIg0vpDTX1ICthIaZ2ZmC-yYCC6grV9M3JT3ZD2xZDBZtHzIfvEHj861L5EQW7Nn-kOoLj0AR72rKnCUmjJOvI0zmEb9HXFGWYSVGGcgxfTLH4Xvl3qHuG6bnDDc8FMBRyn2B4n7kjnWpZW-0F3U4pufSJouXVj6LhbCyJ2ox3WjrEOwV-ZKy83yKke5d3nSIHECEanuSiiaMc8W7u8uJ76mnvxFlxHsxmJZ0aKCGzfME14jpo4YyQzw6bbIY~QINEvmfivWLZFT1s5o4XzKOaSp3zDpwjKYX4WeXhM4zd8PgaWovJdjDEAzbtBNFaWILuG4NdpzXVg__');
-      background-size: cover;
-      background-position: center;
-      border-radius: 1em;
-      height: 250px;
-      margin-bottom: 30px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-  
-    .menu-container {
-        margin-inline: 7em;
-      .menu-item {
-        margin-bottom: 20px;
-  
-        .menu-title {
-          width: 100%;
-          padding: 15px 20px;
-          background-color: #FF6060;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          text-align: left;
-          font-size: 18px;
-          cursor: pointer;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-family: Montserrat;
-          font-weight: 700;
-  
-          .arrow {
-            transition: transform 0.3s ease;
-            &.open {
-              transform: rotate(180deg);
-            }
-          }
-        }
-  
-        .menu-content {
-            background-color: #F6F6F6;
-            color: #000000;
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            font-family: Montserrat;
-    
-            &.open {
-              padding: 20px;
-              max-height: 500px; 
-              opacity: 1;
-            }
-          }
-      }
+  width: auto;
+  @extend .container;
+  min-height: 50vh;
+
+  .bannerAbout {
+    @extend .banner;
+    @include background-image('https://s3-alpha-sig.figma.com/img/56fa/e17e/b9995860bb6384a77ca7dc9bf52da3be?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mI2jputeVs0mIg0vpDTX1ICthIaZ2ZmC-yYCC6grV9M3JT3ZD2xZDBZtHzIfvEHj861L5EQW7Nn-kOoLj0AR72rKnCUmjJOvI0zmEb9HXFGWYSVGGcgxfTLH4Xvl3qHuG6bnDDc8FMBRyn2B4n7kjnWpZW-0F3U4pufSJouXVj6LhbCyJ2ox3WjrEOwV-ZKy83yKke5d3nSIHECEanuSiiaMc8W7u8uJ76mnvxFlxHsxmJZ0aKCGzfME14jpo4YyQzw6bbIY~QINEvmfivWLZFT1s5o4XzKOaSp3zDpwjKYX4WeXhM4zd8PgaWovJdjDEAzbtBNFaWILuG4NdpzXVg__');
+    margin-bottom: 30px;
+  }
+
+  .menu-container {
+    margin-inline: 7em;
+    @include menu-item;
+
+    @include mobile {
+      margin-inline: 0;
     }
   }
+}

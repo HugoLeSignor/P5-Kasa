@@ -1,31 +1,59 @@
+@import './src/pages/styles/global.scss';
+
 .header {
-    display: flex;
+  @include flex-between;
+  padding-inline: $padding-inline;
+  padding-top: 2em;
+  background-color: $white;
+
+  @include mobile {
+    padding-inline: 0;
+    padding-top: 1em;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding-inline: 10em;
-    padding-top: 2em;
-    background-color: #fff;
+    gap: 5em;
+
   }
+}
+.logo {
+  display: flex;
+  align-items: start;
+  margin-left: 1.5em;
+}
+
+nav {
+  display: flex;
+  margin-right: 1.5em;
   
-  .nav {
-    display: flex;
+
+  @include mobile {
+    margin-top: 1em;
+    gap: 5em;
     
   }
+}
 
-  nav a {
-    text-align: right;
-    font-family: Montserrat;
-    font-weight: 500;
-    font-size: 24px;
-    margin-left: 70px;
-    text-decoration: none;
-    color: #000;
-  }
-  
-  nav a:hover {
+nav a {
+  text-align: right;
+  font-weight: 500;
+  font-size: 24px;
+  margin-left: 70px;
+  text-decoration: none;
+  color: $text-color;
+  flex-wrap: nowrap;
+
+  &:hover {
     font-weight: bold;
   }
 
-  nav a.active {
+  &.active {
     text-decoration: underline;
   }
+
+  @include mobile {
+    justify-content: start;
+    font-size: 24px;
+    margin-left: 20px;
+    text-wrap: nowrap;
+  }
+}
