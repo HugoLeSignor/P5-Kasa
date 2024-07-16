@@ -12,6 +12,7 @@ $margin-top: 3em;
 
 // Breakpoints
 $mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
 
 // Mixins
 @mixin flex-center {
@@ -79,9 +80,22 @@ $mobile-breakpoint: 768px;
   }
 }
 
-// Mobile mixin
+
 @mixin mobile {
-  @media (max-width: #{$mobile-breakpoint}) {
+  @media (max-width: #{$mobile-breakpoint - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-breakpoint}) and (max-width: #{$tablet-breakpoint - 1px}) {
+    @content;
+  }
+}
+
+
+@mixin mobile-tablet {
+  @media (max-width: #{$tablet-breakpoint - 1px}) {
     @content;
   }
 }
