@@ -1,8 +1,10 @@
-@import './src/pages/styles/global.scss';
+@import "./src/pages/styles/global.scss";
 
 .home {
   .banner {
-    @include background-image('https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CC~a2D6Bjdg~219YWHG0vBgGUHjFbj3TW3SeWM02Wd3r4krjq7J6Pw5ojAw~xF~O1bX9~9x~xU0iQP-gztsAHazuOmwLzzMc86Q1p9tZa9DR813UdKO21BYwq-YN52sKvwhPqrtgSS5Vbx3MMtUDPnrdYlPcX3TEVz8ieiiC2ABxLP83uwAcfTcYmSxHhYk6bwR1KsRn6hVsqdbAAyFtAEUm3xEMcnVNWgHPvuOq0HStUD4p36xIT~N2r0PspCUyzAqbZU7yS9DMH7R~hKOOJgqods8~FJL7pZ-sabAVsbt3mQfw6RKtdI7ujdj6Q8vrIyXHkudwDPlRXenYsir4Gg__');
+    @include background-image(
+      "https://s3-alpha-sig.figma.com/img/4706/e7dd/e270fc8fc902a1eb738458e7b29c1899?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CC~a2D6Bjdg~219YWHG0vBgGUHjFbj3TW3SeWM02Wd3r4krjq7J6Pw5ojAw~xF~O1bX9~9x~xU0iQP-gztsAHazuOmwLzzMc86Q1p9tZa9DR813UdKO21BYwq-YN52sKvwhPqrtgSS5Vbx3MMtUDPnrdYlPcX3TEVz8ieiiC2ABxLP83uwAcfTcYmSxHhYk6bwR1KsRn6hVsqdbAAyFtAEUm3xEMcnVNWgHPvuOq0HStUD4p36xIT~N2r0PspCUyzAqbZU7yS9DMH7R~hKOOJgqods8~FJL7pZ-sabAVsbt3mQfw6RKtdI7ujdj6Q8vrIyXHkudwDPlRXenYsir4Gg__"
+    );
     opacity: 1;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
@@ -44,13 +46,17 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.507) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.507) 100%
+      );
     }
 
     h2 {
@@ -64,16 +70,16 @@
       margin: 0 20px 20px 20px;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: -5px; // Adjust as needed to position the underline correctly
         height: 3px; // Thickness of the underline
         width: 100%;
-        background-color: #FF6060; // Color of the underline
+        background-color: #ff6060; // Color of the underline
         z-index: -1; // Place the underline behind the text
       }
     }
   }
-  @extend .container
+  @extend .container;
 }

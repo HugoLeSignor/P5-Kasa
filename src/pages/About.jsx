@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './styles/About.scss';
+import React, { useState } from "react";
+import "./styles/About.scss";
 
 export default function About() {
   const [openMenus, setOpenMenus] = useState([]);
 
   const toggleMenu = (menu) => {
-    setOpenMenus(prevOpenMenus => {
+    setOpenMenus((prevOpenMenus) => {
       if (prevOpenMenus.includes(menu)) {
-        return prevOpenMenus.filter(item => item !== menu);
+        return prevOpenMenus.filter((item) => item !== menu);
       } else {
         return [...prevOpenMenus, menu];
       }
@@ -15,36 +15,53 @@ export default function About() {
   };
 
   const menuItems = [
-    { 
-      title: 'Fiabilité', 
-      content: 'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.'
+    {
+      title: "Fiabilité",
+      content:
+        "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
     },
-    { 
-      title: 'Respect', 
-      content: 'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.'
+    {
+      title: "Respect",
+      content:
+        "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.",
     },
-    { 
-      title: 'Service', 
-      content: 'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.'
+    {
+      title: "Service",
+      content:
+        "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.",
     },
-    { 
-      title: 'Sécurité', 
-      content: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
+    {
+      title: "Sécurité",
+      content:
+        "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
     },
   ];
 
   return (
-    <div className='about'>
-      <div className='bannerAbout'></div>
+    <div className="about">
+      <div className="bannerAbout"></div>
 
-      <div className='menu-container'>
-      {menuItems.map((item, index) => (
-          <div key={index} className='menu-item'>
-            <button onClick={() => toggleMenu(item.title)} className='menu-title'>
+      <div className="menu-container">
+        {menuItems.map((item, index) => (
+          <div key={index} className="menu-item">
+            <button
+              onClick={() => toggleMenu(item.title)}
+              className="menu-title"
+            >
               {item.title}
-              <span className={`arrow ${openMenus.includes(item.title) ? 'open' : ''}`}>▼</span>
+              <span
+                className={`arrow ${
+                  openMenus.includes(item.title) ? "open" : ""
+                }`}
+              >
+                ▼
+              </span>
             </button>
-            <div className={`menu-content ${openMenus.includes(item.title) ? 'open' : ''}`}>
+            <div
+              className={`menu-content ${
+                openMenus.includes(item.title) ? "open" : ""
+              }`}
+            >
               {item.content}
             </div>
           </div>

@@ -1,10 +1,10 @@
 // Variables
-$primary-color: #FF6060;
-$secondary-color: #F6F6F6;
+$primary-color: #ff6060;
+$secondary-color: #f6f6f6;
 $text-color: #000000;
 $white: #fff;
 
-$font-family: 'Montserrat', sans-serif;
+$font-family: "Montserrat", sans-serif;
 $border-radius: 1em;
 
 $padding-inline: 10em;
@@ -73,13 +73,12 @@ $tablet-breakpoint: 1024px;
 
       &.open {
         padding: 20px;
-        max-height: 500px; 
+        max-height: 500px;
         opacity: 1;
       }
     }
   }
 }
-
 
 @mixin mobile {
   @media (max-width: #{$mobile-breakpoint - 1px}) {
@@ -92,7 +91,6 @@ $tablet-breakpoint: 1024px;
     @content;
   }
 }
-
 
 @mixin mobile-tablet {
   @media (max-width: #{$tablet-breakpoint - 1px}) {

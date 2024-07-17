@@ -1,4 +1,4 @@
-@import './src/pages/styles/global.scss';
+@import "./src/pages/styles/global.scss";
 
 .header {
   @include flex-between;
@@ -12,7 +12,6 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 5em;
-
   }
 }
 .logo {
@@ -24,12 +23,10 @@
 nav {
   display: flex;
   margin-right: 1.5em;
-  
 
   @include mobile {
     margin-top: 1em;
     gap: 5em;
-    
   }
 }
 
